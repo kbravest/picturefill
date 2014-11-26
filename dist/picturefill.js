@@ -47,6 +47,9 @@ window.matchMedia || (window.matchMedia = function() {
 		};
 	};
 }());
+
+
+
 /*! Picturefill - Responsive Images that work today.
 *  Author: Scott Jehl, Filament Group, 2012 ( new proposal implemented by Shawn Jansepar )
 *  License: MIT/GPLv2
@@ -534,17 +537,6 @@ pf.getWidthFromLength = function( length ) {
 	picturefill._ = pf;
 
 	/* expose picturefill */
-	if ( typeof module === "object" && typeof module.exports === "object" ){
-		// CommonJS, just export
-		module.exports = picturefill;
-	}
-	else if( typeof define === "object" && define.amd ){
-		// AMD support
-		define( function(){ return picturefill; } );
-	}
-	else if( typeof w === "object" ){
-		// If no AMD and we are in the browser, attach to window
-		w.picturefill = picturefill;
-	}
+	w.picturefill = picturefill;
 
 } )( this, this.document );
